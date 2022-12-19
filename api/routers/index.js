@@ -10,7 +10,6 @@ const upload = multer({ storage }).single("file");
 
 storageRouter.post("/files", upload, (req, res) => {
   const { file } = req;
-  console.log("j", file);
   const { webapplink, title } = req.body;
   uploadFile(file, res, webapplink, title);
 });
